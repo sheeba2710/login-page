@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access the PulseAuth ecosystem. Enter credentials for secure login or create a new user profile with real-time verification and multi-factor capabilities.">
+    <title>PulseAuth | Secure Access Gateway</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background gradient bubbles -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Main Card Container -->
+    <main class="auth-container">
+        <!-- Notification toast -->
+        <div class="toast" id="toast-notification" aria-live="polite">
+            <span class="toast-icon" id="toast-icon-wrapper"></span>
+            <span class="toast-message" id="toast-msg-text"></span>
+        </div>
+
+        <div class="auth-card">
+            <!-- Left Panel (Branding / Welcome) - Hidden on mobile, beautiful on desktop -->
+            <section class="brand-panel">
+                <div class="brand-content">
+                    <div class="logo">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <h1 class="logo-text" id="main-title">PulseAuth</h1>
+                    </div>
+                    <h2>Secure Access Gateway</h2>
+                    <p>Enter the ecosystem. Experience lightning-fast verification and elite protection.</p>
+                </div>
+                <div class="brand-footer">
+                    <span>© 2026 Pulse Systems. All rights reserved.</span>
+                </div>
+            </section>
+
+            <!-- Right Panel (Forms) -->
+            <section class="form-panel">
+                <!-- Toggle Mode Header -->
+                <div class="form-header">
+                    <div class="tab-switcher">
+                        <button type="button" class="tab-btn active" id="tab-login-btn">Sign In</button>
+                        <button type="button" class="tab-btn" id="tab-signup-btn">Register</button>
+                        <span class="tab-indicator" id="tab-slider-indicator"></span>
+                    </div>
+                </div>
+
+                <!-- Forms Container -->
+                <div class="forms-wrapper" id="forms-slider-wrapper">
+                    <!-- Login Form -->
+                    <form id="login-form-element" class="auth-form active" novalidate>
+                        <div class="form-title">
+                            <h3>Welcome Back</h3>
+                            <p>Verify your identity to proceed</p>
+                        </div>
+
+                        <!-- Email Input Group -->
+                        <div class="input-group" id="login-email-group">
+                            <label for="login-email-field">Email Address</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <input type="email" id="login-email-field" placeholder="name@company.com" autocomplete="email" required>
+                                <span class="validation-status" id="login-email-status"></span>
+                            </div>
+                            <span class="error-msg" id="login-email-error"></span>
+                        </div>
+
+                        <!-- Password Input Group -->
+                        <div class="input-group" id="login-password-group">
+                            <div class="label-row">
+                                <label for="login-password-field">Password</label>
+                                <a href="#" class="forgot-link" id="forgot-password-link">Forgot password?</a>
+                            </div>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                <input type="password" id="login-password-field" placeholder="••••••••" required>
+                                <button type="button" class="password-toggle" id="login-password-toggle-btn" aria-label="Toggle password visibility">
+                                    <!-- Eye icon -->
+                                    <svg class="eye-open" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <!-- Eye-off icon (hidden by default) -->
+                                    <svg class="eye-closed hidden" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                </button>
+                                <span class="validation-status" id="login-password-status"></span>
+                            </div>
+                            <span class="error-msg" id="login-password-error"></span>
+                        </div>
+
+                        <!-- Remember Me -->
+                        <div class="checkbox-row" id="login-remember-row">
+                            <label class="custom-checkbox" for="login-remember-checkbox">
+                                <input type="checkbox" id="login-remember-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="label-text">Keep me signed in</span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="login-submit-btn">
+                            <span class="btn-text" id="login-btn-text">Sign In</span>
+                            <span class="btn-loader hidden" id="login-btn-loader">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </span>
+                        </button>
+
+                        <!-- Social Logins -->
+                        <div class="social-section" id="login-social-container">
+                            <div class="divider">
+                                <span>or continue with</span>
+                            </div>
+                            <div class="social-grid">
+                                <button type="button" class="social-btn google-btn" id="login-google-btn">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.2-5.187 4.2-3.324 0-6.02-2.7-6.02-6.02s2.696-6.02 6.02-6.02c1.5 0 2.87.55 3.93 1.45l3.07-3.07C18.91 2.94 15.79 1.8 12.24 1.8 6.58 1.8 2 6.38 2 12s4.58 10.2 10.24 10.2c5.91 0 10.56-4.16 10.56-10.2 0-.62-.07-1.21-.2-1.785H12.24z"></path>
+                                    </svg>
+                                    <span>Google</span>
+                                </button>
+                                <button type="button" class="social-btn github-btn" id="login-github-btn">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+                                    </svg>
+                                    <span>GitHub</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Signup Form -->
+                    <form id="signup-form-element" class="auth-form" novalidate>
+                        <div class="form-title">
+                            <h3>Create Account</h3>
+                            <p>Join our secure ecosystem today</p>
+                        </div>
+
+                        <!-- Name Input Group -->
+                        <div class="input-group" id="signup-name-group">
+                            <label for="signup-name-field">Full Name</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <input type="text" id="signup-name-field" placeholder="John Doe" autocomplete="name" required>
+                                <span class="validation-status" id="signup-name-status"></span>
+                            </div>
+                            <span class="error-msg" id="signup-name-error"></span>
+                        </div>
+
+                        <!-- Email Input Group -->
+                        <div class="input-group" id="signup-email-group">
+                            <label for="signup-email-field">Email Address</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <input type="email" id="signup-email-field" placeholder="name@company.com" autocomplete="email" required>
+                                <span class="validation-status" id="signup-email-status"></span>
+                            </div>
+                            <span class="error-msg" id="signup-email-error"></span>
+                        </div>
+
+                        <!-- Password Input Group -->
+                        <div class="input-group" id="signup-password-group">
+                            <label for="signup-password-field">Password</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                <input type="password" id="signup-password-field" placeholder="Min. 8 characters" required>
+                                <button type="button" class="password-toggle" id="signup-password-toggle-btn" aria-label="Toggle password visibility">
+                                    <!-- Eye icon -->
+                                    <svg class="eye-open" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <!-- Eye-off icon (hidden by default) -->
+                                    <svg class="eye-closed hidden" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                </button>
+                                <span class="validation-status" id="signup-password-status"></span>
+                            </div>
+                            <!-- Password Strength Indicator -->
+                            <div class="password-strength-meter" id="signup-password-strength-meter">
+                                <div class="meter-bar"><div class="meter-fill" id="strength-fill"></div></div>
+                                <span class="meter-label" id="strength-label">Password strength: Weak</span>
+                            </div>
+                            <span class="error-msg" id="signup-password-error"></span>
+                        </div>
+
+                        <!-- Terms of Service -->
+                        <div class="checkbox-row" id="signup-terms-row">
+                            <label class="custom-checkbox" for="signup-terms-checkbox">
+                                <input type="checkbox" id="signup-terms-checkbox" required>
+                                <span class="checkmark"></span>
+                                <span class="label-text">I agree to the <a href="#" class="inline-link" id="terms-link">Terms of Service</a> & <a href="#" class="inline-link" id="privacy-link">Privacy Policy</a></span>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="signup-submit-btn">
+                            <span class="btn-text" id="signup-btn-text">Create Account</span>
+                            <span class="btn-loader hidden" id="signup-btn-loader">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
