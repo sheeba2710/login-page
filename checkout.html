@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure checkout gateway. Choose your payment method to complete the transaction.">
+    <title>PulseAuth | Secure Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background gradient bubbles -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Notification toast -->
+    <div class="toast" id="toast-notification" aria-live="polite">
+        <span class="toast-message" id="toast-msg-text"></span>
+    </div>
+
+    <div class="checkout-wrapper">
+        <!-- Header -->
+        <header class="navbar">
+            <div class="nav-left">
+                <a href="dashboard.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 17 22 12"></polyline>
+                    </svg>
+                    <span class="logo-text">PulseAuth Checkout</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <div class="user-menu">
+                    <div class="user-avatar" id="user-avatar">U</div>
+                    <span class="user-name" id="display-user-name">User</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="checkout-container">
+            <div class="checkout-grid" id="checkout-form-grid">
+                
+                <!-- Left Column: Payment options -->
+                <section class="payment-section">
+                    <h2 class="section-title">Select Payment Method</h2>
+                    
+                    <div class="payment-methods">
+                        <!-- Pay on Delivery Option -->
+                        <div class="method-card active" data-method="pod">
+                            <div class="method-header">
+                                <span class="radio-indicator"></span>
+                                <div class="method-info">
+                                    <div class="method-title">Pay on Delivery (COD)</div>
+                                    <div class="method-desc">Pay cash or card when your package arrives</div>
+                                </div>
+                                <span class="method-icon">📦</span>
+                            </div>
+                        </div>
+
+                        <!-- GPay Option -->
+                        <div class="method-card" data-method="gpay">
+                            <div class="method-header">
+                                <span class="radio-indicator"></span>
+                                <div class="method-info">
+                                    <div class="method-title">Google Pay (GPay)</div>
+                                    <div class="method-desc">Instant payment via simulated GPay wallet</div>
+                                </div>
+                                <span class="method-icon">📱</span>
+                            </div>
+                        </div>
+
+                        <!-- UPI Option -->
+                        <div class="method-card" data-method="upi">
+                            <div class="method-header">
+                                <span class="radio-indicator"></span>
+                                <div class="method-info">
+                                    <div class="method-title">UPI / VPA</div>
+                                    <div class="method-desc">Pay using your UPI app (PhonePe, BHIM, PayTM)</div>
+                                </div>
+                                <span class="method-icon">💳</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment details area (dynamic) -->
+                    <div class="method-details-box">
+                        <!-- POD Details -->
+                        <div id="details-pod" class="details-pane active">
+                            <div class="alert-info">
+                                <p><strong>Delivery Confirmation:</strong> Your order will be shipped to your registered address. You can pay with Cash, Credit/Debit Card, or scan a dynamic QR code presented by the delivery agent.</p>
+                            </div>
+                        </div>
+
+                        <!-- GPay Details -->
+                        <div id="details-gpay" class="details-pane">
+                            <div class="alert-info">
+                                <p>Authenticate your simulated GPay payment. Scan the checkout QR code below or tap Complete Order to authorize the payment via GPay app.</p>
+                            </div>
+                            <div class="qr-container">
+                                <div class="mock-qr">
+                                    <svg viewBox="0 0 100 100" class="qr-svg">
+                                        <rect width="100" height="100" fill="#181829" rx="8"></rect>
+                                        <path d="M10 10h20v20H10zM15 15h10v10H15z" fill="#a78bfa"></path>
+                                        <path d="M70 10h20v20H70zM75 15h10v10H75z" fill="#a78bfa"></path>
+                                        <path d="M10 70h20v20H10zM15 75h10v10H15z" fill="#a78bfa"></path>
+                                        <path d="M40 40h20v20H40z" fill="#d946ef"></path>
+                                        <path d="M35 15h5v5h-5zM45 20h10v5h-10zM15 35h5v10h-5zM50 45h5v15h-5zM65 70h5v15h-5zM75 80h10v5H75z" fill="#f8fafc"></path>
+                                    </svg>
+                                    <span class="qr-label">Scan to Pay with GPay</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI Details -->
+                        <div id="details-upi" class="details-pane">
+                            <div class="input-group">
+                                <label for="upi-id-field">Enter UPI ID / VPA</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="upi-id-field" placeholder="username@upi" autocomplete="off">
+                                    <span class="validation-status" id="upi-status-indicator"></span>
+                                </div>
+                                <span class="error-msg" id="upi-error-msg"></span>
+                            </div>
+                            <div class="alert-info">
+                                <p>A payment request will be sent to your UPI app. Please verify the name and amount before entering your secure UPI PIN.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="action-row">
+                        <a href="dashboard.html" class="btn btn-secondary">Cancel & Back</a>
+                        <button type="button" class="btn btn-primary" id="complete-payment-btn">
+                            <span class="btn-text">Complete Order</span>
+                            <span class="btn-loader hidden" id="payment-loader">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Right Column: Order Summary -->
+                <section class="summary-section">
+                    <h2 class="section-title">Order Summary</h2>
+                    <div class="summary-card">
+                        <div class="summary-items" id="summary-items-list">
+                            <!-- Items dynamically populated -->
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-pricing">
+                            <div class="pricing-row">
+                                <span>Subtotal</span>
+                                <span id="summary-subtotal">$0.00</span>
+                            </div>
+                            <div class="pricing-row discount">
+                                <span>Discount</span>
+                                <span id="summary-discount">-$0.00</span>
+                            </div>
+                            <div class="pricing-row total">
+                                <span>Total Payable</span>
+                                <span id="summary-total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Success State overlay (hidden by default) -->
+            <div class="success-screen hidden" id="success-screen">
+                <div class="success-card">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" width="72" height="72" stroke="currentColor" stroke-width="2" fill="none">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h2>Order Confirmed!</h2>
+                    <p class="success-lead">Thank you for your purchase from the PulseAuth Ecosystem.</p>
+                    
+                    <div class="order-details-summary">
+                        <div class="detail-row">
+                            <span class="label">Transaction Status:</span>
+                            <span class="value success">PAID</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Payment Method:</span>
+                            <span class="value" id="success-payment-method">Pay on Delivery</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Total Paid:</span>
+                            <span class="value highlight" id="success-amount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <p class="success-footer">Redirecting you back to the Dashboard...</p>
+                    <button class="btn btn-primary" id="success-back-btn">Go to Dashboard Now</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

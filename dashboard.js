@@ -309,6 +309,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 4. Shopping Cart State & Management ---
     let cart = [];
+    const savedCart = localStorage.getItem('pulse_cart');
+    if (savedCart) {
+        try {
+            cart = JSON.parse(savedCart);
+        } catch (e) {
+            cart = [];
+        }
+    }
 
     // Cart Drawer Elements
     const cartToggleBtn = document.getElementById('cart-toggle-btn');
@@ -339,6 +347,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update cart view
     const updateCartUI = () => {
+        // Persist cart to local storage
+        localStorage.setItem('pulse_cart', JSON.stringify(cart));
+
         // Calculate items amount
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartBadge.textContent = totalItems;
@@ -479,14 +490,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Checkout handler
     checkoutBtn.addEventListener('click', () => {
         checkoutBtn.disabled = true;
-        showToast('Processing checkout simulation...', 'success');
+        showToast('Redirecting to secure checkout...', 'success');
         
+        localStorage.setItem('pulse_cart', JSON.stringify(cart));
         setTimeout(() => {
-            showToast('Transaction success! Thank you for purchasing from PulseAuth.', 'success');
-            cart = [];
-            updateCartUI();
-            closeCart();
-        }, 1500);
+            window.location.href = 'checkout.html';
+        }, 1000);
     });
 
     // --- 5. Toast Notification System ---
@@ -788,4 +797,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.remove('ai-highlight');
         });
     };
+
+    // Render cart items if any existed on load
+    updateCartUI();
 });
