@@ -265,9 +265,24 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             toggleLoadingState(loginSubmitBtn, false);
             showToast('Successfully authenticated. Welcome back!', 'success');
+            
+            // Save mock user session
+            const userName = email.split('@')[0];
+            const stylizedName = userName.charAt(0).toUpperCase() + userName.slice(1);
+            localStorage.setItem('pulse_user', JSON.stringify({
+                email: email,
+                name: stylizedName,
+                isLoggedIn: true
+            }));
+
             // Clear passwords for security
             loginPassword.value = '';
             setStatus(loginPassword, 'clear');
+
+            // Redirect to dashboard after a short delay so toast is visible
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1200);
         }, 2000);
     });
 

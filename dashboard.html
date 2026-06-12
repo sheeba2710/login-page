@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PulseAuth Product Ecosystem. Explore futuristic products with custom pricing, discounts, and our native AI search assistant.">
+    <title>PulseAuth | Products Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background gradient bubbles -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Notification toast -->
+    <div class="toast" id="toast-notification" aria-live="polite">
+        <span class="toast-icon" id="toast-icon-wrapper"></span>
+        <span class="toast-message" id="toast-msg-text"></span>
+    </div>
+
+    <!-- Dashboard Main Wrapper -->
+    <div class="dashboard-wrapper">
+        
+        <!-- Header Navbar -->
+        <header class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                    <span class="logo-text">PulseAuth</span>
+                </div>
+            </div>
+
+            <!-- Global Search in Navbar -->
+            <div class="nav-center">
+                <div class="search-bar">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="global-search" placeholder="Search products, brands, categories...">
+                    <button class="clear-search-btn hidden" id="clear-search-btn">&times;</button>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <!-- Shopping Cart Toggle -->
+                <button class="nav-action-btn cart-toggle-btn" id="cart-toggle-btn" aria-label="Open Shopping Cart">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+
+                <!-- User Profile & Logout -->
+                <div class="user-menu">
+                    <div class="user-avatar" id="user-avatar">U</div>
+                    <span class="user-name" id="display-user-name">User</span>
+                    <button class="logout-btn" id="logout-btn" title="Logout session">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Hero Dashboard Header -->
+            <section class="hero-section">
+                <div class="hero-welcome">
+                    <h1 class="welcome-title">Welcome back, <span id="welcome-name">Explorer</span>!</h1>
+                    <p class="welcome-subtitle">Browse the ecosystem for advanced gear and security essentials.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-value" id="stat-count-items">8</span>
+                        <span class="stat-label">Total Products</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Up to 30%</span>
+                        <span class="stat-label">Active Discounts</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters Section -->
+            <section class="filter-section">
+                <div class="category-tabs" id="category-tabs">
+                    <button class="category-btn active" data-category="all">All Ecosystem</button>
+                    <button class="category-btn" data-category="electronics">Electronics</button>
+                    <button class="category-btn" data-category="audio">Audio</button>
+                    <button class="category-btn" data-category="wearables">Wearables</button>
+                    <button class="category-btn" data-category="accessories">Accessories</button>
+                </div>
+                <div class="filter-meta" id="filter-meta">
+                    Showing all products
+                </div>
+            </section>
+
+            <!-- Product Grid -->
+            <section class="products-section">
+                <div class="products-grid" id="products-grid">
+                    <!-- Products dynamically rendered here -->
+                </div>
+                <!-- Empty Search State -->
+                <div class="empty-state hidden" id="empty-state">
+                    <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                    </svg>
+                    <h3>No products found</h3>
+                    <p>We couldn't find matches for your current search filters. Try asking the AI assistant or resetting your filters.</p>
+                    <button class="reset-btn" id="reset-filters-btn">Reset All Filters</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Side-sliding Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart-btn" id="close-cart-btn" aria-label="Close Cart">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Cart Items Area -->
+        <div class="cart-body" id="cart-body">
+            <!-- Dynamic Cart Items here -->
+            <div class="cart-empty-message" id="cart-empty-message">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <p>Your shopping cart is currently empty.</p>
+            </div>
+        </div>
+
+        <!-- Cart Footer Checkout Area -->
+        <div class="cart-footer">
+            <div class="cart-summary-row">
+                <span>Total Savings:</span>
+                <span class="savings-amount" id="cart-savings-total">$0.00</span>
+            </div>
+            <div class="cart-summary-row total-row">
+                <span>Grand Total:</span>
+                <span class="total-amount" id="cart-grand-total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" disabled>
+                <span>Proceed to Checkout</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Search Chatbox Widget -->
+    <div class="ai-widget-container">
+        <!-- Floating Chat Icon Toggle -->
+        <button class="ai-toggle-btn" id="ai-toggle-btn" aria-label="Open AI Assistant" title="Ask Pulse AI">
+            <span class="ai-icon-wrapper">
+                <!-- Futuristic AI Sparkles / Bot SVG -->
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" class="ai-sparkles-icon">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                    <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="currentColor" fill-opacity="0.1"></path>
+                </svg>
+            </span>
+            <span class="pulse-ring"></span>
+        </button>
+
+        <!-- Chat Container Window (Hidden by default) -->
+        <div class="ai-chat-window hidden" id="ai-chat-window">
+            <div class="chat-header">
+                <div class="chat-title-info">
+                    <div class="ai-avatar">AI</div>
+                    <div>
+                        <h4>Pulse AI Assistant</h4>
+                        <span class="ai-status">online search agent</span>
+                    </div>
+                </div>
+                <button class="close-chat-btn" id="close-chat-btn" aria-label="Close Chat">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Messages Log -->
+            <div class="chat-body" id="chat-messages">
+                <div class="chat-msg ai">
+                    <div class="msg-bubble">
+                        Hello! I am your Pulse AI Assistant. I can help search the catalog, filter by price, display active discounts, or highlight specific products.
+                    </div>
+                </div>
+                <div class="chat-msg ai">
+                    <div class="msg-bubble">
+                        Try typing things like <strong>"Show items under $100"</strong>, <strong>"Do you have a smartwatch?"</strong>, or <strong>"What's on sale?"</strong>!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Suggestions Pills -->
+            <div class="chat-suggestions">
+                <button class="suggest-btn" data-query="Show active discounts">🏷️ Active Sales</button>
+                <button class="suggest-btn" data-query="Items under $100">💰 Under $100</button>
+                <button class="suggest-btn" data-query="Show all headphones">🎧 Headphones</button>
+                <button class="suggest-btn" data-query="Reset search">🔄 Reset View</button>
+            </div>
+
+            <!-- Chat Input Form -->
+            <form class="chat-input-row" id="chat-input-form">
+                <input type="text" id="chat-input-field" placeholder="Ask AI to find products..." autocomplete="off" required>
+                <button type="submit" class="send-msg-btn" id="send-msg-btn" aria-label="Send Message">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
