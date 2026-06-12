@@ -618,19 +618,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. GREETINGS
         if (q === 'hi' || q === 'hello' || q === 'hey' || q.includes('who are you') || q === 'help') {
-            return `Hello there! I am your interactive search assistant. Here are some of the ways I can help:
-            <br><br>
-            • Search for price bounds: <strong>"items under $100"</strong> or <strong>"less than $60"</strong>
-            • Check discounts: <strong>"show active sales"</strong> or <strong>"discounts on wearables"</strong>
-            • Filter by category: <strong>"find audio gear"</strong>
-            • Highlight specific items: <strong>"locate the SSD drive"</strong>
-            • Reset grid: <strong>"reset search filters"</strong>`;
+            return `Hello! I can help you find products, search prices, or filter categories. Try: "items under $100" or "show sales".`;
         }
 
         // 2. RESET
         if (q === 'reset' || q === 'clear' || q.includes('reset search') || q.includes('show all') || q.includes('show everything')) {
             resetAllFilters();
-            return "I have cleared all filtering criteria and updated the dashboard to display our entire ecosystem!";
+            return "Cleared all filters and showing all products.";
         }
 
         // 3. SHOW DISCOUNTS
@@ -642,9 +636,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const discountedItems = PRODUCTS.filter(p => p.discount > 0);
             if (discountedItems.length > 0) {
                 discountedItems.forEach(item => triggerCardHighlight(item.id));
-                return `I found <strong>${discountedItems.length} products</strong> currently on sale with active discount rates! I have highlighted them and filtered the dashboard for you.`;
+                return `Showing ${discountedItems.length} items on sale (highlighted).`;
             }
-            return "We do not have any items on sale at the moment. Please check back later!";
+            return "No items are currently on sale.";
         }
 
         // 4. PRICE BOUNDS (e.g. "under $100", "less than 60")
@@ -659,9 +653,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const items = PRODUCTS.filter(p => p.finalPrice <= maxPrice);
             if (items.length > 0) {
                 items.forEach(item => triggerCardHighlight(item.id));
-                return `Here are the items priced <strong>under $${maxPrice.toFixed(2)}</strong> (${items.length} item${items.length !== 1 ? 's' : ''} found). The grid has been updated!`;
+                return `Showing ${items.length} items under $${maxPrice.toFixed(2)}.`;
             } else {
-                return `I searched for products under $${maxPrice.toFixed(2)} but found nothing in our store. Try checking a higher price limit!`;
+                return `No products found under $${maxPrice.toFixed(2)}.`;
             }
         }
 
@@ -673,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cheapItems = PRODUCTS.filter(p => p.finalPrice < 80.00);
             cheapItems.forEach(item => triggerCardHighlight(item.id));
-            return `I have filtered the collection to show our budget-friendly products priced <strong>under $80.00</strong> (found ${cheapItems.length} items).`;
+            return `Showing ${cheapItems.length} budget items under $80.00.`;
         }
 
         // 5. SPECIFIC PRODUCT HIGHLIGHT OR CATEGORY FILTERING
@@ -726,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Highlight items inside this category
             const catItems = PRODUCTS.filter(p => p.category === categoryFilterTarget);
             catItems.forEach(item => triggerCardHighlight(item.id));
-            return `I have filtered the page to showcase our **${categoryFilterTarget.toUpperCase()}** catalog (${catItems.length} item${catItems.length !== 1 ? 's' : ''} found).`;
+            return `Showing ${catItems.length} items in ${categoryFilterTarget.toUpperCase()}.`;
         }
 
         // Apply visual product highlight
@@ -745,7 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 triggerCardHighlight(productHighlightTarget, true);
             }, 100);
 
-            return `I found the <strong>${targetProd.name}</strong> for you! I've displayed it and applied a visual pulse highlight on its card.`;
+            return `Found and highlighted: ${targetProd.name}.`;
         }
 
         // 6. DEFAULT GENERAL SEARCH
@@ -764,13 +758,11 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             renderProducts();
             keywordMatches.forEach(item => triggerCardHighlight(item.id));
-            return `I searched the store and found <strong>${keywordMatches.length} matching products</strong>. They are now filtered on the main grid!`;
+            return `Showing ${keywordMatches.length} items matching your search.`;
         }
 
         // No matches found
-        return `I couldn't find any products in our database matching "${query}". 
-        <br><br>
-        Would you like to search for categories like **audio** or **wearables**, see what is **on sale**, or try browsing our **accessories**?`;
+        return `No products found matching "${query}". Try searching for categories or sales.`;
     };
 
     // Helper functions for AI styling highlights
