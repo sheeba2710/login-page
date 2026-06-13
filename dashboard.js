@@ -46,88 +46,96 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             name: "Pulse SoundLink Headset",
             category: "audio",
-            originalPrice: 149.99,
+            originalPrice: 14999.00,
             discount: 20, // 20%
-            finalPrice: 119.99,
+            finalPrice: 11999.00,
             rating: 4.8,
             description: "High-fidelity noise-cancelling over-ear wireless headphones with studio-quality acoustics.",
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>`
         },
         {
             id: 2,
             name: "Aura Smartwatch Pro",
             category: "wearables",
-            originalPrice: 249.99,
+            originalPrice: 24999.00,
             discount: 15, // 15%
-            finalPrice: 212.49,
+            finalPrice: 21249.00,
             rating: 4.7,
             description: "Advanced biometric tracker, premium sleep monitor, and secure MFA authentication token.",
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><path d="M12 9v3l1.5 1.5"></path><path d="M16.51 7.51l1.49-1.49M16.51 16.49l1.49 1.49M7.49 7.51l-1.49-1.49M7.49 16.49l-1.49 1.49"></path></svg>`
         },
         {
             id: 3,
             name: "Quantum Drive SSD",
             category: "electronics",
-            originalPrice: 99.99,
+            originalPrice: 9999.00,
             discount: 10, // 10%
-            finalPrice: 89.99,
+            finalPrice: 8999.00,
             rating: 4.9,
             description: "Ultra-fast PCIe Gen4 NVMe M.2 solid-state drive with secure hardware-level encryption.",
+            image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>`
         },
         {
             id: 4,
             name: "Neon Mechanical Keyboard",
             category: "accessories",
-            originalPrice: 129.99,
+            originalPrice: 12999.00,
             discount: 25, // 25%
-            finalPrice: 97.49,
+            finalPrice: 9749.00,
             rating: 4.5,
             description: "RGB backlit mechanical keyboard with hot-swappable tactile linear key switches.",
+            image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="10" y1="12" x2="10.01" y2="12"></line><line x1="14" y1="12" x2="14.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>`
         },
         {
             id: 5,
             name: "Pulse Buds Lite",
             category: "audio",
-            originalPrice: 79.99,
+            originalPrice: 7999.00,
             discount: 30, // 30%
-            finalPrice: 55.99,
+            finalPrice: 5599.00,
             rating: 4.3,
             description: "Ergonomic true-wireless earbuds with dual-microphone clarity and touch control.",
+            image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path></svg>`
         },
         {
             id: 6,
             name: "CyberCharger GaN 100W",
             category: "electronics",
-            originalPrice: 49.99,
+            originalPrice: 4999.00,
             discount: 15, // 15%
-            finalPrice: 42.49,
+            finalPrice: 4249.00,
             rating: 4.6,
             description: "Gallium Nitride pocket-sized charger with triple ports and intelligent power distribution.",
+            image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="22"></line><line x1="9" y1="18" x2="9" y2="22"></line><line x1="15" y1="18" x2="15" y2="22"></line></svg>`
         },
         {
             id: 7,
             name: "Nexus Smart Band",
             category: "wearables",
-            originalPrice: 59.99,
+            originalPrice: 5999.00,
             discount: 0, // No discount
-            finalPrice: 59.99,
+            finalPrice: 5999.00,
             rating: 4.2,
             description: "Sleek fitness bracelet with continuous heart monitoring and high-contrast OLED display.",
+            image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"></path><line x1="6" y1="12" x2="18" y2="12"></line></svg>`
         },
         {
             id: 8,
             name: "Vector Mesh Router Wi-Fi 6",
             category: "electronics",
-            originalPrice: 199.99,
+            originalPrice: 19999.00,
             discount: 20, // 20%
-            finalPrice: 159.99,
+            finalPrice: 15999.00,
             rating: 4.7,
             description: "High-performance dual-band mesh node supporting seamless 1.8Gbps gigabit networking.",
+            image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline></svg>`
         }
     ];
@@ -197,15 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Pricing elements html
                 const discountTag = prod.discount > 0 ? `<div class="discount-tag">-${prod.discount}% OFF</div>` : '';
-                const originalPriceHtml = prod.discount > 0 ? `<span class="original-price">$${prod.originalPrice.toFixed(2)}</span>` : '';
+                const originalPriceHtml = prod.discount > 0 ? `<span class="original-price">₹${prod.originalPrice.toFixed(2)}</span>` : '';
 
                 card.innerHTML = `
                     ${discountTag}
                     <div class="product-category-tag">${prod.category}</div>
                     <div class="product-image-wrapper">
-                        <div class="visual-placeholder">
-                            ${prod.iconSvg}
-                        </div>
+                        <img src="${prod.image}" alt="${prod.name}" class="product-image" loading="lazy">
                     </div>
                     <div class="product-details">
                         <h3 class="product-title">${prod.name}</h3>
@@ -217,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="product-price-row">
                             <div class="price-box">
                                 ${originalPriceHtml}
-                                <span class="final-price">$${prod.finalPrice.toFixed(2)}</span>
+                                <span class="final-price">₹${prod.finalPrice.toFixed(2)}</span>
                             </div>
                             <button class="add-cart-btn" data-product-id="${prod.id}" title="Add to Cart" aria-label="Add ${prod.name} to Cart">
                                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none">
@@ -368,8 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Your shopping cart is currently empty.</p>
                 </div>
             `;
-            cartGrandTotal.textContent = "$0.00";
-            cartSavingsTotal.textContent = "$0.00";
+            cartGrandTotal.textContent = "₹0.00";
+            cartSavingsTotal.textContent = "₹0.00";
             checkoutBtn.disabled = true;
             return;
         }
@@ -392,17 +398,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const cartRow = document.createElement('div');
             cartRow.className = 'cart-item';
             
-            const originalPriceHtml = prod.discount > 0 ? `<span class="cart-item-orig-price">$${(prod.originalPrice * item.quantity).toFixed(2)}</span>` : '';
+            const originalPriceHtml = prod.discount > 0 ? `<span class="cart-item-orig-price">₹${(prod.originalPrice * item.quantity).toFixed(2)}</span>` : '';
 
             cartRow.innerHTML = `
                 <div class="cart-item-visual">
-                    ${prod.iconSvg}
+                    <img src="${prod.image}" alt="${prod.name}" class="cart-item-image">
                 </div>
                 <div class="cart-item-info">
                     <div class="cart-item-name">${prod.name}</div>
                     <div class="cart-item-pricing">
                         ${originalPriceHtml}
-                        <span class="cart-item-price">$${itemTotal.toFixed(2)}</span>
+                        <span class="cart-item-price">₹${itemTotal.toFixed(2)}</span>
                     </div>
                     <div class="cart-item-controls">
                         <div class="quantity-selector">
@@ -422,8 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cartBody.appendChild(cartRow);
         });
 
-        cartGrandTotal.textContent = `$${grandTotalVal.toFixed(2)}`;
-        cartSavingsTotal.textContent = `$${savingsTotalVal.toFixed(2)}`;
+        cartGrandTotal.textContent = `₹${grandTotalVal.toFixed(2)}`;
+        cartSavingsTotal.textContent = `₹${savingsTotalVal.toFixed(2)}`;
     };
 
     // Card Add Button Actions (Event Delegation)
@@ -627,7 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. GREETINGS
         if (q === 'hi' || q === 'hello' || q === 'hey' || q.includes('who are you') || q === 'help') {
-            return `Hello! I can help you find products, search prices, or filter categories. Try: "items under $100" or "show sales".`;
+            return `Hello! I can help you find products, search prices, or filter categories. Try: "items under ₹100" or "show sales".`;
         }
 
         // 2. RESET
@@ -650,8 +656,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return "No items are currently on sale.";
         }
 
-        // 4. PRICE BOUNDS (e.g. "under $100", "less than 60")
-        const priceRegex = /(?:under|less than|below|cheap|<=|<|\$)\s*(\d+)/i;
+        // 4. PRICE BOUNDS (e.g. "under ₹100", "less than 60")
+        const priceRegex = /(?:under|less than|below|cheap|<=|<|\$|₹|rs\.?)\s*(\d+)/i;
         const priceMatch = q.match(priceRegex);
         
         if (priceMatch && priceMatch[1]) {
@@ -662,21 +668,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const items = PRODUCTS.filter(p => p.finalPrice <= maxPrice);
             if (items.length > 0) {
                 items.forEach(item => triggerCardHighlight(item.id));
-                return `Showing ${items.length} items under $${maxPrice.toFixed(2)}.`;
+                return `Showing ${items.length} items under ₹${maxPrice.toFixed(2)}.`;
             } else {
-                return `No products found under $${maxPrice.toFixed(2)}.`;
+                return `No products found under ₹${maxPrice.toFixed(2)}.`;
             }
         }
 
         // General 'cheap' without a number
         if (q.includes('cheap') || q.includes('affordable') || q.includes('inexpensive')) {
-            // Find items under $80
-            customFilterFunc = (prod) => prod.finalPrice < 80.00;
+            // Find items under ₹6000
+            customFilterFunc = (prod) => prod.finalPrice < 6000.00;
             renderProducts();
 
-            const cheapItems = PRODUCTS.filter(p => p.finalPrice < 80.00);
+            const cheapItems = PRODUCTS.filter(p => p.finalPrice < 6000.00);
             cheapItems.forEach(item => triggerCardHighlight(item.id));
-            return `Showing ${cheapItems.length} budget items under $80.00.`;
+            return `Showing ${cheapItems.length} budget items under ₹6000.00.`;
         }
 
         // 5. SPECIFIC PRODUCT HIGHLIGHT OR CATEGORY FILTERING

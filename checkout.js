@@ -63,21 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
         row.className = 'summary-item-row';
         row.innerHTML = `
             <div class="summary-item-visual">
-                ${prod.iconSvg}
+                <img src="${prod.image}" alt="${prod.name}" class="checkout-item-image">
             </div>
             <div class="summary-item-info">
                 <div class="summary-item-name">${prod.name}</div>
                 <div class="summary-item-qty">Qty: ${qty}</div>
             </div>
-            <div class="summary-item-price">$${itemTotal.toFixed(2)}</div>
+            <div class="summary-item-price">₹${itemTotal.toFixed(2)}</div>
         `;
         summaryItemsList.appendChild(row);
     });
 
     // Set prices
-    summarySubtotal.textContent = `$${subtotalVal.toFixed(2)}`;
-    summaryDiscount.textContent = `-$${savingsVal.toFixed(2)}`;
-    summaryTotal.textContent = `$${totalVal.toFixed(2)}`;
+    summarySubtotal.textContent = `₹${subtotalVal.toFixed(2)}`;
+    summaryDiscount.textContent = `-₹${savingsVal.toFixed(2)}`;
+    summaryTotal.textContent = `₹${totalVal.toFixed(2)}`;
 
     // --- 3. Payment Method Switching ---
     const methodCards = document.querySelectorAll('.method-card');
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             successPaymentMethod.textContent = methodLabel;
-            successAmount.textContent = `$${totalVal.toFixed(2)}`;
+            successAmount.textContent = `₹${totalVal.toFixed(2)}`;
 
             // Clear local cart
             localStorage.removeItem('pulse_cart');
