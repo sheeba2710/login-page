@@ -9,26 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabSignupBtn = document.getElementById('tab-signup-btn');
     const tabIndicator = document.getElementById('tab-slider-indicator');
     const formsWrapper = document.getElementById('forms-slider-wrapper');
-    
+
     const loginForm = document.getElementById('login-form-element');
     const signupForm = document.getElementById('signup-form-element');
-    
+
     const loginEmail = document.getElementById('login-email-field');
     const loginPassword = document.getElementById('login-password-field');
     const loginSubmitBtn = document.getElementById('login-submit-btn');
-    
+
     const signupName = document.getElementById('signup-name-field');
     const signupEmail = document.getElementById('signup-email-field');
     const signupPassword = document.getElementById('signup-password-field');
     const signupTerms = document.getElementById('signup-terms-checkbox');
     const signupSubmitBtn = document.getElementById('signup-submit-btn');
-    
+
     const strengthFill = document.getElementById('strength-fill');
     const strengthLabel = document.getElementById('strength-label');
-    
+
     const toast = document.getElementById('toast-notification');
     const toastMsgText = document.getElementById('toast-msg-text');
-    
+
     // --- 1. Form Switching Logic ---
     const switchToLogin = () => {
         tabLoginBtn.classList.add('active');
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setupPasswordToggle = (toggleBtnId, inputFieldId) => {
         const toggleBtn = document.getElementById(toggleBtnId);
         const inputField = document.getElementById(inputFieldId);
-        
+
         if (!toggleBtn || !inputField) return;
 
         const eyeOpen = toggleBtn.querySelector('.eye-open');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBtn.addEventListener('click', () => {
             const isPassword = inputField.type === 'password';
             inputField.type = isPassword ? 'text' : 'password';
-            
+
             if (isPassword) {
                 eyeOpen.classList.add('hidden');
                 eyeClosed.classList.remove('hidden');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showToast = (message, type = 'success') => {
         // Clear existing timeouts
         clearTimeout(toastTimeout);
-        
+
         toast.className = 'toast'; // Reset classes
         toast.classList.add(type, 'show');
         toastMsgText.textContent = message;
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setStatus = (inputField, status, errorMsg = '') => {
         const group = inputField.closest('.input-group');
         const errorLabel = group.querySelector('.error-msg');
-        
+
         if (status === 'success') {
             group.classList.remove('error');
             group.classList.add('success');
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let score = 0;
-        
+
         // 1. Length check
         if (value.length >= 8) score++;
         // 2. Contains numbers
@@ -218,12 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 5. Submission Operations ---
-    
+
     // Switch state helper (loading/loaded)
     const toggleLoadingState = (btn, showLoading) => {
         const textSpan = btn.querySelector('.btn-text');
         const loaderSpan = btn.querySelector('.btn-loader');
-        
+
         if (showLoading) {
             btn.disabled = true;
             textSpan.classList.add('hidden');
@@ -238,17 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Login Form Submission
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const email = loginEmail.value.trim();
         const password = loginPassword.value;
-        
+
         let isValid = true;
 
         if (!validateEmailFormat(email)) {
             setStatus(loginEmail, 'error', 'Invalid email address format.');
             isValid = false;
         }
-        
+
         if (password.length === 0) {
             setStatus(loginPassword, 'error', 'Password is required.');
             isValid = false;
@@ -261,11 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simulate API call
         toggleLoadingState(loginSubmitBtn, true);
-        
+
         setTimeout(() => {
             toggleLoadingState(loginSubmitBtn, false);
             showToast('Successfully authenticated. Welcome back!', 'success');
-            
+
             // Save mock user session
             const userName = email.split('@')[0];
             const stylizedName = userName.charAt(0).toUpperCase() + userName.slice(1);
@@ -327,20 +327,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             toggleLoadingState(signupSubmitBtn, false);
             showToast('Account registered successfully! Please log in.', 'success');
-            
+
             // Clear inputs
             signupName.value = '';
             signupEmail.value = '';
             signupPassword.value = '';
             signupTerms.checked = false;
-            
+
             // Clear strength indicator & states
             setStatus(signupName, 'clear');
             setStatus(signupEmail, 'clear');
             setStatus(signupPassword, 'clear');
             strengthFill.style.width = '0%';
             strengthLabel.textContent = 'Password strength';
-            
+
             // Switch to Login Form
             setTimeout(() => {
                 switchToLogin();
