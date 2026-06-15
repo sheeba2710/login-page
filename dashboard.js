@@ -138,6 +138,102 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline></svg>`
         }
+       {
+    id: 9,
+    name: "AeroSound Wireless Headphones",
+    category: "electronics",
+    originalPrice: 4999.00,
+    discount: 25,
+    finalPrice: 3749.00,
+    rating: 4.6,
+    description: "Premium over-ear headphones with active noise cancellation and 40-hour battery life.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 16 0"></path><rect x="2" y="12" width="4" height="8"></rect><rect x="18" y="12" width="4" height="8"></rect></svg>`
+},
+{
+    id: 10,
+    name: "UltraFit Smart Watch",
+    category: "electronics",
+    originalPrice: 7999.00,
+    discount: 15,
+    finalPrice: 6799.00,
+    rating: 4.5,
+    description: "Fitness smartwatch with heart rate monitoring, GPS tracking and AMOLED display.",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="2"></rect></svg>`
+},
+{
+    id: 11,
+    name: "Pro Mechanical Keyboard",
+    category: "electronics",
+    originalPrice: 3499.00,
+    discount: 10,
+    finalPrice: 3149.00,
+    rating: 4.8,
+    description: "RGB mechanical keyboard featuring blue switches and customizable lighting effects.",
+    image: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>`
+},
+{
+    id: 12,
+    name: "Gaming Mouse X9",
+    category: "electronics",
+    originalPrice: 2499.00,
+    discount: 18,
+    finalPrice: 2049.00,
+    rating: 4.7,
+    description: "Ergonomic gaming mouse with adjustable DPI and programmable buttons.",
+    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6"></path><rect x="6" y="2" width="12" height="20" rx="6"></rect></svg>`
+},
+{
+    id: 13,
+    name: "Classic Leather Backpack",
+    category: "fashion",
+    originalPrice: 2999.00,
+    discount: 20,
+    finalPrice: 2399.00,
+    rating: 4.4,
+    description: "Stylish leather backpack with spacious compartments for work and travel.",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 8a5 5 0 0 1 10 0"></path><rect x="5" y="8" width="14" height="12" rx="2"></rect></svg>`
+},
+{
+    id: 14,
+    name: "Modern Desk Lamp",
+    category: "home",
+    originalPrice: 1999.00,
+    discount: 12,
+    finalPrice: 1759.00,
+    rating: 4.3,
+    description: "LED desk lamp with adjustable brightness and eye-care lighting technology.",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6"></path><path d="M8 20h8"></path></svg>`
+},
+{
+    id: 15,
+    name: "Premium Coffee Maker",
+    category: "home",
+    originalPrice: 6999.00,
+    discount: 22,
+    finalPrice: 5459.00,
+    rating: 4.7,
+    description: "Automatic coffee maker with programmable brewing and thermal carafe.",
+    image: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="6" width="10" height="12"></rect></svg>`
+},
+{
+    id: 16,
+    name: "4K Ultra HD Monitor",
+    category: "electronics",
+    originalPrice: 24999.00,
+    discount: 18,
+    finalPrice: 20499.00,
+    rating: 4.9,
+    description: "27-inch 4K monitor with HDR support and ultra-thin bezels.",
+    image: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?w=600&auto=format&fit=crop&q=80",
+    iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12"></rect></svg>`
+}
     ];
 
     let currentCategory = "all";
