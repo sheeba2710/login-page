@@ -1,138 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-body{
-    background:#f4f6f9;
-}
-     <nav>
-        <a href="contact.html">Contact</a>
-    </nav>
+        body {
+            background: #171717;
+        }
 
-.contact-container{
-    max-width:900px;
-    margin:50px auto;
-    background:#fff;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
+        .contact-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #0a0a0a;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-h1{
-    text-align:center;
-    margin-bottom:10px;
-    color:#333;
-}
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:30px;
-}
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-.contact-info{
-    padding:20px;
-}
+        .contact-info {
+            padding: 20px;
+        }
 
-.contact-info h2{
-    margin-bottom:20px;
-    color:#222;
-}
+        .contact-info h2 {
+            margin-bottom: 20px;
+            color: #222;
+        }
 
-.contact-info p{
-    margin:15px 0;
-    color:#555;
-}
+        .contact-info p {
+            margin: 15px 0;
+            color: #555;
+        }
 
-.contact-form{
-    display:flex;
-    flex-direction:column;
-}
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
 
-.contact-form input,
-.contact-form textarea{
-    padding:12px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-}
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
 
-.contact-form textarea{
-    resize:none;
-    height:120px;
-}
+        .contact-form textarea {
+            resize: none;
+            height: 120px;
+        }
 
-.contact-form button{
-    padding:12px;
-    background:#007bff;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
+        .contact-form button {
+            padding: 12px;
+            background: #141515;
+            color: rgb(163, 146, 146);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.contact-form button:hover{
-    background:#0056b3;
-}
+        .contact-form button:hover {
+            background: #7185c6;
+        }
 
-@media(max-width:768px){
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-}
-</style>
+        @media(max-width:768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <nav>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<div class="contact-container">
-    <h1>Contact Us</h1>
-    <p class="subtitle">We'd love to hear from you!</p>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p class="subtitle">We'd love to hear from you!</p>
 
-    <div class="contact-grid">
+        <div class="contact-grid">
 
-        <div class="contact-info">
-            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
 
-            <p>📍 Address: Tuticorin, Tamil Nadu, India</p>
-            <p>📞 Phone: +91 98765 43210</p>
-            <p>✉ Email: support@pulsemart.com</p>
-            <p>🕒 Mon - Sat: 9:00 AM - 6:00 PM</p>
+                <p>📍 Address: Tuticorin, Tamil Nadu, India</p>
+                <p>📞 Phone: +91 98765 43210</p>
+                <p>✉ Email: support@pulsemart.com</p>
+                <p>🕒 Mon - Sat: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <input type="text" placeholder="Subject" required>
+
+                <textarea placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
         </div>
-
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-
-            <input type="email" placeholder="Your Email" required>
-
-            <input type="text" placeholder="Subject" required>
-
-            <textarea placeholder="Your Message" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-
     </div>
-</div>
 
 </body>
+
 </html>
