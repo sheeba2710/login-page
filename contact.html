@@ -6,133 +6,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: #171717;
+            background: #0d0d0d;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
         }
 
         .contact-container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: #0a0a0a;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1100px;
+            background: #151515;
+            border: 1px solid #222;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
-        h1 {
+        .header {
             text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 600;
             margin-bottom: 10px;
-            color: #333;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
+        .header p {
+            color: #a0a0a0;
+            font-size: 15px;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
         }
 
-        .contact-info {
-            padding: 20px;
+        .info-box h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
         }
 
-        .contact-info h2 {
+        .info-item {
             margin-bottom: 20px;
-            color: #222;
+            padding: 18px;
+            background: #1c1c1c;
+            border-radius: 12px;
+            transition: 0.3s ease;
         }
 
-        .contact-info p {
-            margin: 15px 0;
-            color: #555;
+        .info-item:hover {
+            transform: translateY(-3px);
+            background: #242424;
+        }
+
+        .info-item p {
+            color: #d0d0d0;
+            font-size: 15px;
         }
 
         .contact-form {
             display: flex;
             flex-direction: column;
+            gap: 18px;
         }
 
         .contact-form input,
         .contact-form textarea {
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
+            width: 100%;
+            padding: 16px;
+            background: #1c1c1c;
+            border: 1px solid #2c2c2c;
+            border-radius: 12px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #4f7cff;
         }
 
         .contact-form textarea {
+            min-height: 140px;
             resize: none;
-            height: 120px;
         }
 
         .contact-form button {
-            padding: 12px;
-            background: #141515;
-            color: rgb(163, 146, 146);
+            padding: 16px;
+            background: white;
+            color: black;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 16px;
+            transition: 0.3s;
         }
 
         .contact-form button:hover {
-            background: #7185c6;
+            background: #4f7cff;
+            color: white;
         }
 
-        @media(max-width:768px) {
+        @media(max-width: 850px) {
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <a href="contact.html">Contact</a>
-    </nav>
 
     <div class="contact-container">
-        <h1>Contact Us</h1>
-        <p class="subtitle">We'd love to hear from you!</p>
+
+        <div class="header">
+            <h1>Contact Us</h1>
+            <p>Have a question or feedback? We'd love to hear from you.</p>
+        </div>
 
         <div class="contact-grid">
 
-            <div class="contact-info">
+            <div class="info-box">
+
                 <h2>Get In Touch</h2>
 
-                <p>📍 Address: Tuticorin, Tamil Nadu, India</p>
-                <p>📞 Phone: +91 98765 43210</p>
-                <p>✉ Email: support@pulsemart.com</p>
-                <p>🕒 Mon - Sat: 9:00 AM - 6:00 PM</p>
+                <div class="info-item">
+                    <p>📍 Tuticorin, Tamil Nadu, India</p>
+                </div>
+
+                <div class="info-item">
+                    <p>📞 +91 98765 43210</p>
+                </div>
+
+                <div class="info-item">
+                    <p>✉ support@pulsemart.com</p>
+                </div>
+
+                <div class="info-item">
+                    <p>🕒 Mon - Sat | 9:00 AM - 6:00 PM</p>
+                </div>
+
             </div>
 
             <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
 
-                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Name">
 
-                <input type="text" placeholder="Subject" required>
+                <input type="email" placeholder="Your Email">
 
-                <textarea placeholder="Your Message" required></textarea>
+                <input type="text" placeholder="Subject">
+
+                <textarea placeholder="Write your message..."></textarea>
 
                 <button type="submit">Send Message</button>
+
             </form>
 
         </div>
+
     </div>
 
 </body>
