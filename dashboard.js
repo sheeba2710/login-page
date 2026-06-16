@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?w=600&auto=format&fit=crop&q=80",
     iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12"></rect></svg>`
 }
-    ];
+  ];
 
     let currentCategory = "all";
     let searchQuery = "";
