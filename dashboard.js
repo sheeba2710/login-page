@@ -147,17 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80"
 },
 {
-    id: 9,
-    name: "Portable Power Bank 20000mAh",
-    category: "electronics",
-    originalPrice: 2499.00,
-    discount: 20,
-    finalPrice: 1999.00,
-    rating: 4.6,
-    description: "Fast-charging power bank with USB-C support.",
-    image: "https://images.unsplash.com/photo-1609592806596-4d0d42d9d4f6?w=600&auto=format&fit=crop&q=80"
-},
-{
     id: 10,
     name: "Bluetooth Soundbar",
     category: "audio",
