@@ -212,50 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     description: "10.1-inch Android tablet with long battery life.",
     image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600"
 },
-{
-    id: 16,
-    name: "Wireless Printer",
-    category: "electronics",
-    originalPrice: 12999.00,
-    discount: 10,
-    finalPrice: 11699.00,
-    rating: 4.4,
-    description: "All-in-one wireless printer for home and office.",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600"
-},
-{
-    id: 17,
-    name: "1080p Webcam",
-    category: "electronics",
-    originalPrice: 3499.00,
-    discount: 20,
-    finalPrice: 2799.00,
-    rating: 4.6,
-    description: "Full HD webcam with built-in microphone.",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600"
-},
-{
-    id: 18,
-    name: "Portable SSD 1TB",
-    category: "electronics",
-    originalPrice: 8999.00,
-    discount: 15,
-    finalPrice: 7649.00,
-    rating: 4.8,
-    description: "High-speed portable SSD with USB-C connectivity.",
-    image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600"
-},
-{
-    id: 19,
-    name: "Smart Projector",
-    category: "electronics",
-    originalPrice: 24999.00,
-    discount: 18,
-    finalPrice: 20499.00,
-    rating: 4.7,
-    description: "Portable projector with built-in Android OS.",
-    image: "https://images.unsplash.com/photo-1528395874238-34ebe249b3f2?w=600"
-},
+
   ];
 
     let currentCategory = "all";
