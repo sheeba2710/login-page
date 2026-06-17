@@ -102,6 +102,116 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path></svg>`
         },
+       {
+    id: 5,
+    name: "Smart LED TV 43 Inch",
+    category: "electronics",
+    originalPrice: 34999.00,
+    discount: 15,
+    finalPrice: 29749.00,
+    rating: 4.7,
+    description: "Full HD Smart TV with built-in streaming apps.",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 6,
+    name: "Wireless Earbuds Pro",
+    category: "audio",
+    originalPrice: 5999.00,
+    discount: 20,
+    finalPrice: 4799.00,
+    rating: 4.6,
+    description: "True wireless earbuds with active noise cancellation.",
+    image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 7,
+    name: "Gaming Laptop X15",
+    category: "electronics",
+    originalPrice: 79999.00,
+    discount: 10,
+    finalPrice: 71999.00,
+    rating: 4.8,
+    description: "High-performance gaming laptop with RTX graphics.",
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 8,
+    name: "Wi-Fi 6 Router",
+    category: "electronics",
+    originalPrice: 6999.00,
+    discount: 15,
+    finalPrice: 5949.00,
+    rating: 4.5,
+    description: "Ultra-fast dual-band Wi-Fi 6 router.",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 9,
+    name: "Portable Power Bank 20000mAh",
+    category: "electronics",
+    originalPrice: 2499.00,
+    discount: 20,
+    finalPrice: 1999.00,
+    rating: 4.6,
+    description: "Fast-charging power bank with USB-C support.",
+    image: "https://images.unsplash.com/photo-1609592806596-4d0d42d9d4f6?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 10,
+    name: "Bluetooth Soundbar",
+    category: "audio",
+    originalPrice: 8999.00,
+    discount: 18,
+    finalPrice: 7379.00,
+    rating: 4.7,
+    description: "Immersive surround sound with wireless connectivity.",
+    image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 11,
+    name: "USB-C Fast Charger 65W",
+    category: "electronics",
+    originalPrice: 1999.00,
+    discount: 25,
+    finalPrice: 1499.00,
+    rating: 4.5,
+    description: "Compact fast charger for phones and laptops.",
+    image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 12,
+    name: "Mechanical Gaming Keyboard",
+    category: "accessories",
+    originalPrice: 4999.00,
+    discount: 20,
+    finalPrice: 3999.00,
+    rating: 4.8,
+    description: "RGB mechanical keyboard with blue switches.",
+    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 13,
+    name: "4K Action Camera",
+    category: "electronics",
+    originalPrice: 10999.00,
+    discount: 15,
+    finalPrice: 9349.00,
+    rating: 4.6,
+    description: "Waterproof action camera with 4K recording.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&auto=format&fit=crop&q=80"
+},
+{
+    id: 14,
+    name: "Smart Home Security Camera",
+    category: "electronics",
+    originalPrice: 3999.00,
+    discount: 10,
+    finalPrice: 3599.00,
+    rating: 4.7,
+    description: "AI-powered indoor security camera with night vision.",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80"
+}
   ];
 
     let currentCategory = "all";
