@@ -148,6 +148,9 @@ body {
     font-weight: 600;
     transition: 0.3s;
 }
+.contact-link:hover {
+        color: #ffffff;
+    }
 
 
 .auth-form {
