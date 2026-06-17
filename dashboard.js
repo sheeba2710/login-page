@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rating: 4.7,
     description: "AI-powered indoor security camera with night vision.",
     image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&auto=format&fit=crop&q=80"
-}
+},
        {
     id: 15,
     name: "Smart Android Tablet",
