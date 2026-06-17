@@ -256,61 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
     description: "Portable projector with built-in Android OS.",
     image: "https://images.unsplash.com/photo-1528395874238-34ebe249b3f2?w=600"
 },
-{
-    id: 20,
-    name: "Wireless Charging Pad",
-    category: "electronics",
-    originalPrice: 1499.00,
-    discount: 20,
-    finalPrice: 1199.00,
-    rating: 4.5,
-    description: "Fast wireless charger compatible with all Qi devices.",
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600"
-},
-{
-    id: 21,
-    name: "Mini Bluetooth Speaker",
-    category: "audio",
-    originalPrice: 2499.00,
-    discount: 15,
-    finalPrice: 2124.00,
-    rating: 4.4,
-    description: "Compact speaker with deep bass and long battery life.",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600"
-},
-{
-    id: 22,
-    name: "External DVD Writer",
-    category: "electronics",
-    originalPrice: 2999.00,
-    discount: 10,
-    finalPrice: 2699.00,
-    rating: 4.3,
-    description: "USB external DVD writer for laptops and PCs.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"
-},
-{
-    id: 23,
-    name: "Dual Monitor Stand",
-    category: "accessories",
-    originalPrice: 4999.00,
-    discount: 20,
-    finalPrice: 3999.00,
-    rating: 4.6,
-    description: "Adjustable stand for dual monitor setups.",
-    image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=600"
-},
-{
-    id: 24,
-    name: "USB Hub 7-Port",
-    category: "electronics",
-    originalPrice: 1999.00,
-    discount: 15,
-    finalPrice: 1699.00,
-    rating: 4.5,
-    description: "7-port USB hub with high-speed data transfer.",
-    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600"
-}
   ];
 
     let currentCategory = "all";
