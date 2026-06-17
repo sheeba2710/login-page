@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             iconSvg: `<svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path></svg>`
         },
        {
-    id: 5,
+    id: 6,
     name: "Smart LED TV 43 Inch",
     category: "electronics",
     originalPrice: 34999.00,
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&auto=format&fit=crop&q=80"
 },
 {
-    id: 6,
+    id: 7,
     name: "Wireless Earbuds Pro",
     category: "audio",
     originalPrice: 5999.00,
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=600&auto=format&fit=crop&q=80"
 },
 {
-    id: 7,
+    id: 8,
     name: "Gaming Laptop X15",
     category: "electronics",
     originalPrice: 79999.00,
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80"
 },
 {
-    id: 8,
+    id: 9,
     name: "Wi-Fi 6 Router",
     category: "electronics",
     originalPrice: 6999.00,
@@ -212,6 +212,105 @@ document.addEventListener('DOMContentLoaded', () => {
     description: "10.1-inch Android tablet with long battery life.",
     image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600"
 },
+       {
+    id: 16,
+    name: "Wireless Printer",
+    category: "electronics",
+    originalPrice: 12999.00,
+    discount: 10,
+    finalPrice: 11699.00,
+    rating: 4.4,
+    description: "All-in-one wireless printer for home and office.",
+    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600"
+},
+{
+    id: 17,
+    name: "1080p Webcam",
+    category: "electronics",
+    originalPrice: 3499.00,
+    discount: 20,
+    finalPrice: 2799.00,
+    rating: 4.6,
+    description: "Full HD webcam with built-in microphone.",
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600"
+},
+{
+    id: 18,
+    name: "Portable SSD 1TB",
+    category: "electronics",
+    originalPrice: 8999.00,
+    discount: 15,
+    finalPrice: 7649.00,
+    rating: 4.8,
+    description: "High-speed portable SSD with USB-C connectivity.",
+    image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600"
+},
+{
+    id: 19,
+    name: "Smart Projector",
+    category: "electronics",
+    originalPrice: 24999.00,
+    discount: 18,
+    finalPrice: 20499.00,
+    rating: 4.7,
+    description: "Portable projector with built-in Android OS.",
+    image: "https://images.unsplash.com/photo-1528395874238-34ebe249b3f2?w=600"
+},
+{
+    id: 20,
+    name: "Wireless Charging Pad",
+    category: "electronics",
+    originalPrice: 1499.00,
+    discount: 20,
+    finalPrice: 1199.00,
+    rating: 4.5,
+    description: "Fast wireless charger compatible with all Qi devices.",
+    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600"
+},
+{
+    id: 21,
+    name: "Mini Bluetooth Speaker",
+    category: "audio",
+    originalPrice: 2499.00,
+    discount: 15,
+    finalPrice: 2124.00,
+    rating: 4.4,
+    description: "Compact speaker with deep bass and long battery life.",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600"
+},
+{
+    id: 22,
+    name: "External DVD Writer",
+    category: "electronics",
+    originalPrice: 2999.00,
+    discount: 10,
+    finalPrice: 2699.00,
+    rating: 4.3,
+    description: "USB external DVD writer for laptops and PCs.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"
+},
+{
+    id: 23,
+    name: "Dual Monitor Stand",
+    category: "accessories",
+    originalPrice: 4999.00,
+    discount: 20,
+    finalPrice: 3999.00,
+    rating: 4.6,
+    description: "Adjustable stand for dual monitor setups.",
+    image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=600"
+},
+{
+    id: 24,
+    name: "USB Hub 7-Port",
+    category: "electronics",
+    originalPrice: 1999.00,
+    discount: 15,
+    finalPrice: 1699.00,
+    rating: 4.5,
+    description: "7-port USB hub with high-speed data transfer.",
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600"
+}
 
   ];
 
